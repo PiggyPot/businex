@@ -1,6 +1,6 @@
 # Businex
 
-**TODO: Add description**
+Date calculations based on business calendars.
 
 ## Installation
 
