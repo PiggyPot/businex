@@ -6,6 +6,8 @@ defmodule Businex.Mixfile do
       app: :businex,
       version: "0.1.0",
       elixir: "~> 1.6",
+      description: "Elixir business day calculations",
+      package: package(),
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -23,7 +25,16 @@ defmodule Businex.Mixfile do
   defp deps do
     [
       {:yaml_elixir, "~> 1.3.1"},
-      {:timex, "~> 3.1"}
+      {:timex, "~> 3.1"},
+      {:ex_doc, ">= 0.0.0", only: :dev}
+    ]
+  end
+
+  defp package() do
+    [
+      maintainers: ["Phil McClure"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/PiggyPot/businex"}
     ]
   end
 end
