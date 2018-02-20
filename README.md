@@ -1,10 +1,6 @@
 # Businex
 
-<<<<<<< HEAD
 Date calculations based on business calendars. Note, only support for BACS calendar currently.
-=======
-(WIP) Date calculations based on business calendars.
->>>>>>> d9669bbaccfc3f7f446b8bbaab416587daf81148
 
 ## Installation
 
