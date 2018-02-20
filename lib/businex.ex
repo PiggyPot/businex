@@ -1,18 +1,16 @@
 defmodule Businex do
-  @moduledoc """
-  Documentation for Businex.
-  """
+  @moduledoc false
+  use Application
 
-  @doc """
-  Hello world.
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
 
-  ## Examples
-
-      iex> Businex.hello
-      :world
-
-  """
-  def hello do
-    :world
+    Supervisor.start_link(
+      [
+        worker(Businex.Calendar, [])
+      ],
+      strategy: :one_for_one,
+      name: Businex.Supervisor
+    )
   end
 end
