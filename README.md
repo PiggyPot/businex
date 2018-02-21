@@ -28,6 +28,8 @@ end
 Here are some examples of how to use `businex`.
 
 ```elixir
+iex> Businex.Calendar.set_calendar(:bacs) # :bacs is the default.
+:ok
 iex> date = Timex.parse!("2018-02-01", "{YYYY}-{0M}-{D}")
 iex> Businex.Calendar.next_business_day(date)
 ~N[2018-02-02 00:00:00]
