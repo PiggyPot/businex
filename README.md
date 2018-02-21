@@ -1,5 +1,7 @@
 # Businex
 
+[![Hex pm](http://img.shields.io/hexpm/v/businex.svg?style=flat)](https://hex.pm/packages/businex)
+
 Date calculations based on business calendars. Note, only support for [BACS calendar](https://github.com/PiggyPot/businex/blob/master/lib/businex/data/bacs.yml) currently. This lib takes influence from the Ruby gem [business](https://github.com/gocardless/business).
 
 ## Installation
@@ -33,7 +35,7 @@ iex> Businex.Calendar.set_calendar(:bacs) # :bacs is the default.
 iex> date = Timex.parse!("2018-02-01", "{YYYY}-{0M}-{D}")
 iex> Businex.Calendar.next_business_day(date)
 ~N[2018-02-02 00:00:00]
-iex> Businex.Calendar.business_day?(date)
+  iex> Businex.Calendar.business_day?(date)
 true
 iex> Businex.Calendar.add_business_days(date, 2)
 ~N[2018-02-05 00:00:00]
