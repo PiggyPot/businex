@@ -1,6 +1,6 @@
 # Businex
 
-Date calculations based on business calendars. Note, only support for BACS calendar currently.
+Date calculations based on business calendars. Note, only support for [BACS calendar](https://github.com/PiggyPot/businex/blob/master/lib/businex/data/bacs.yml) currently. This lib takes influence from the Ruby gem [business](https://github.com/gocardless/business).
 
 ## Installation
 
