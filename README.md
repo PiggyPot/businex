@@ -2,7 +2,7 @@
 
 [![Hex pm](http://img.shields.io/hexpm/v/businex.svg?style=flat)](https://hex.pm/packages/businex) [![Build Status](https://travis-ci.org/PiggyPot/businex.svg?branch=master)](https://travis-ci.org/PiggyPot/businex)
 
-Date calculations based on business calendars. Note, only support for [BACS calendar](https://github.com/PiggyPot/businex/blob/master/lib/businex/data/bacs.yml) currently. This lib takes influence from the Ruby gem [business](https://github.com/gocardless/business).
+Date calculations based on business calendars. Note, only support for [BACS calendar](https://github.com/PiggyPot/businex/blob/master/lib/businex/data/bacs.ex) currently. This lib takes influence from the Ruby gem [business](https://github.com/gocardless/business).
 
 ## Installation
 
@@ -12,7 +12,7 @@ by adding `businex` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:businex, "~> 0.1.0"}
+    {:businex, "~> 0.2.0"}
   ]
 end
 ```

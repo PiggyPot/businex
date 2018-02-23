@@ -1,14 +1,14 @@
 defmodule Businex.Api.Calendar do
   @data_files %{
-    bacs: "#{File.cwd!()}/lib/businex/data/bacs.yml"
+    bacs: Businex.Data.Bacs
   }
 
   def business_day?(calendar, date) do
     cond do
-      Enum.member?(calendar["working_days"], day_name(date)) == false ->
+      Enum.member?(calendar.working_days, day_name(date)) == false ->
         false
 
-      Enum.member?(calendar["holidays"], date) ->
+      Enum.member?(calendar.holidays, date) ->
         false
 
       true ->
@@ -67,12 +67,9 @@ defmodule Businex.Api.Calendar do
   end
 
   def parse_data(type) do
-    data =
-      @data_files[type]
-      |> YamlElixir.read_from_file()
-
-    converted_dates = transform_dates(data["holidays"])
-    Map.put(data, "holidays", converted_dates)
+    data = @data_files[type].get()
+    converted_dates = transform_dates(data.holidays)
+    Map.put(data, :holidays, converted_dates)
   end
 
   defp transform_dates(date_list) do
