@@ -14,8 +14,10 @@ defmodule Businex.Calendar do
 
   @doc false
   def start_link do
+    calendar = Cal.default_calendar()
+
     initial_state = %{
-      data: Cal.parse_data(:bacs)
+      data: Cal.parse_data(calendar)
     }
 
     GenServer.start_link(__MODULE__, initial_state, name: @client_name)
