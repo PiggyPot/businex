@@ -26,7 +26,8 @@ defmodule Businex.Calendar do
   @doc """
   Provides a way to set the calendar data. This is
   currently set by default to :bacs by start_link.
-  There is only one calendar type at the minute (:bacs).
+  Unless you define and configure custom calendars
+  the only calendar available will be `:bacs`.
 
   ## Examples
 
