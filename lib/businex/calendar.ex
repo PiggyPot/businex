@@ -14,8 +14,10 @@ defmodule Businex.Calendar do
 
   @doc false
   def start_link do
+    calendar = Cal.default_calendar()
+
     initial_state = %{
-      data: Cal.parse_data(:bacs)
+      data: Cal.parse_data(calendar)
     }
 
     GenServer.start_link(__MODULE__, initial_state, name: @client_name)
@@ -24,7 +26,8 @@ defmodule Businex.Calendar do
   @doc """
   Provides a way to set the calendar data. This is
   currently set by default to :bacs by start_link.
-  There is only one calendar type at the minute (:bacs).
+  Unless you define and configure custom calendars
+  the only calendar available will be `:bacs`.
 
   ## Examples
 

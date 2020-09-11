@@ -67,9 +67,19 @@ defmodule Businex.Api.Calendar do
   end
 
   def parse_data(type) do
-    data = @data_files[type].get()
+    module = calendar_module(type)
+    data = module.get()
     converted_dates = transform_dates(data.holidays)
     Map.put(data, :holidays, converted_dates)
+  end
+
+  def default_calendar() do
+    Application.get_env(:businex, :default_calendar, :bacs)
+  end
+
+  defp calendar_module(date) do
+    calendars = Application.get_env(:businex, :calendars, @data_files)
+    calendars[date]
   end
 
   defp transform_dates(date_list) do
